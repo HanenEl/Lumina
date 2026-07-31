@@ -38,7 +38,24 @@ Every skin is unique, and every skincare decision matters. Lumina is built to ma
 
 # 🛠️ Technologies Used
 
-List the technologies, frameworks, and tools used in this project.
+| **Category** | **Technology** | **Purpose** |
+|--------------|----------------|-------------|
+| **Frontend** | Streamlit | Interactive web application interface |
+| **AI Model** | Google Gemini 3.5 Flash Lite | Skin profile assessment from facial images and questionnaire responses |
+| **LLM** | Mistral-7B-Instruct-v0.2 | AI-powered skincare product compatibility analysis based on ingredients and skin profile |
+| **OCR** | EasyOCR | Extracts ingredient lists from product label images |
+| **Image Processing** | Pillow (PIL) | Loads and preprocesses uploaded facial images before AI analysis |
+| **Backend** | FastAPI | Handles AI inference requests |
+| **Server** | Uvicorn | Runs the FastAPI application |
+| **Networking** | Pyngrok | Exposes the backend server during development |
+| **Deep Learning** | PyTorch | Executes model inference |
+| **Model Framework** | Hugging Face Transformers | Loads and runs pretrained language models |
+| **Data Validation** | Pydantic | Validates structured AI outputs |
+| **LLM Utilities** | LangChain Core | Parses structured LLM responses |
+| **Text Processing** | Regex  | Cleans and normalizes OCR-extracted text before ingredient matching |
+| **Fuzzy Matching** | difflib | Matches OCR-extracted ingredients with the knowledge base using approximate string matching |
+| **Knowledge Base** | Custom JSON Files | Stores ingredient data, skin type compatibility, and safety information |
+| **Infrastructure** | Kaggle Notebooks (T4 GPU) | Hosts and accelerates model inference |
 
 ---
 
