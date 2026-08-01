@@ -1,0 +1,1757 @@
+{
+  "_schema": {
+    "description": "Master ingredient reference. Referenced by integer id from ingredient_warnings.json.",
+    "fields": {
+      "id": "integer, stable, never reused",
+      "name": "display name",
+      "aliases": "array of strings — other common names, INCI variants, or abbreviations used across labels/OCR/user input. Used for matching an extracted ingredient name back to this entry when it doesn't match 'name' exactly.",
+      "category": "'Active' | 'Humectant' | 'Occlusive/Emollient' | 'Preservative/Solvent' | 'Other'",
+      "functions": "controlled vocab: 'anti_aging', 'acne_treatment', 'oil_control', 'barrier_repair', 'brightening', 'hydration', 'exfoliation', 'soothing', 'sun_protection'",
+      "suitable_for": "skin_type values matching skin_types.json: 'Oily' | 'Dry' | 'Combination' | 'Normal' | 'Sensitive'",
+      "avoid_for": "skin_type values, generally not recommended",
+      "irritation_level": "'Low' | 'Medium' | 'High'",
+      "pregnancy_safe": "true | false | null (null = dose-dependent / inconclusive, must consult professional, do not treat as a clean yes/no)",
+      "comedogenic": "integer 0-5, or null if not established",
+      "use_time": "array, subset of ['Morning', 'Night']. Both listed means fine at either time.",
+      "description": "used as the embedding text for RAG — keep informative",
+      "note": "source citation"
+    }
+  },
+  "entries": [
+    {
+      "id": 1,
+      "name": "Niacinamide",
+      "aliases": [
+        "Vitamin B3",
+        "Nicotinamide",
+        "Niacin"
+      ],
+      "category": "Active",
+      "functions": [
+        "oil_control",
+        "barrier_repair",
+        "brightening",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination",
+        "Sensitive",
+        "Dry",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Vitamin B3 derivative. Strengthens the skin barrier, regulates sebum production, reduces the look of enlarged pores, and improves uneven tone. Well tolerated across nearly all skin types and considered one of the gentlest active ingredients.",
+      "note": "Paula's Choice Ingredient Dictionary; AAD"
+    },
+    {
+      "id": 2,
+      "name": "Salicylic Acid",
+      "aliases": [
+        "BHA",
+        "Beta Hydroxy Acid"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment",
+        "exfoliation",
+        "oil_control"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Dry",
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Night"
+      ],
+      "description": "A beta-hydroxy acid (BHA) that exfoliates inside the pore, helping to clear blackheads and reduce acne breakouts. Oil-soluble, so it penetrates oily/congested skin well. Higher concentrations increase irritation risk.",
+      "note": "AAD guidance: low-dose OTC topical use is generally considered low-risk, but concentrations above 2% should be discussed with a doctor during pregnancy — treated here as dose-dependent, not a flat yes/no."
+    },
+    {
+      "id": 3,
+      "name": "Retinol",
+      "aliases": [
+        "Vitamin A",
+        "Retinoid (mild form)"
+      ],
+      "category": "Active",
+      "functions": [
+        "anti_aging",
+        "acne_treatment"
+      ],
+      "suitable_for": [
+        "Normal",
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Sensitive",
+        "Dry"
+      ],
+      "irritation_level": "High",
+      "pregnancy_safe": false,
+      "comedogenic": 0,
+      "use_time": [
+        "Night"
+      ],
+      "description": "A vitamin A derivative that increases skin cell turnover, reduces the appearance of fine lines, and helps fade dark spots over time. Commonly causes dryness, peeling, and irritation when introduced, especially at higher concentrations.",
+      "note": "AAD; multiple dermatology sources agree topical retinoids/retinol are avoided during pregnancy due to vitamin A-related risk."
+    },
+    {
+      "id": 4,
+      "name": "Vitamin C (L-Ascorbic Acid)",
+      "aliases": [
+        "L-Ascorbic Acid",
+        "Ascorbic Acid"
+      ],
+      "category": "Active",
+      "functions": [
+        "brightening",
+        "anti_aging"
+      ],
+      "suitable_for": [
+        "Normal",
+        "Oily",
+        "Combination",
+        "Dry"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A potent antioxidant that brightens uneven skin tone, fades dark spots, and helps protect against environmental damage. L-Ascorbic Acid is the most effective but least stable and most irritating form; derivatives like Ascorbyl Glucoside are gentler alternatives.",
+      "note": "Paula's Choice Ingredient Dictionary"
+    },
+    {
+      "id": 5,
+      "name": "Hyaluronic Acid",
+      "aliases": [
+        "Sodium Hyaluronate",
+        "HA"
+      ],
+      "category": "Humectant",
+      "functions": [
+        "hydration"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A humectant that attracts and holds water in the skin, providing hydration without adding oil. Suitable for essentially all skin types and often layered under moisturizer.",
+      "note": "Paula's Choice Ingredient Dictionary"
+    },
+    {
+      "id": 6,
+      "name": "Glycerin",
+      "aliases": [
+        "Glycerol"
+      ],
+      "category": "Humectant",
+      "functions": [
+        "hydration",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "One of the most well-studied humectants in skincare, glycerin draws moisture into the skin and supports the skin barrier. Extremely well tolerated across all skin types.",
+      "note": "Dermatology consensus; widely used reference ingredient"
+    },
+    {
+      "id": 7,
+      "name": "Ceramides",
+      "aliases": [
+        "Ceramide NP",
+        "Ceramide AP",
+        "Ceramide EOP"
+      ],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "barrier_repair",
+        "hydration"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Sensitive",
+        "Normal",
+        "Combination"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Lipids naturally found in the skin barrier that help retain moisture and protect against irritants. Especially beneficial for dry, sensitive, or barrier-compromised skin.",
+      "note": "AAD; CeraVe consultant dermatologist guidance"
+    },
+    {
+      "id": 8,
+      "name": "Benzoyl Peroxide",
+      "aliases": [
+        "BPO"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Dry",
+        "Sensitive"
+      ],
+      "irritation_level": "High",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "An antibacterial acne-fighting ingredient that kills acne-causing bacteria and reduces inflammation. Can cause dryness and peeling, and may bleach fabric/hair on contact.",
+      "note": "AAD lists topical benzoyl peroxide among generally acceptable acne treatments during pregnancy."
+    },
+    {
+      "id": 9,
+      "name": "Glycolic Acid",
+      "aliases": [
+        "AHA",
+        "Alpha Hydroxy Acid"
+      ],
+      "category": "Active",
+      "functions": [
+        "exfoliation",
+        "anti_aging",
+        "brightening"
+      ],
+      "suitable_for": [
+        "Normal",
+        "Oily",
+        "Combination",
+        "Dry"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Night"
+      ],
+      "description": "An alpha-hydroxy acid (AHA) that exfoliates the skin surface, improving texture and tone. Only negligible amounts absorb through the skin, so it's generally considered low-risk, though sun protection is essential during use.",
+      "note": "Medical News Today, citing dermatology expert consensus; AAD sun protection guidance"
+    },
+    {
+      "id": 10,
+      "name": "Fragrance",
+      "aliases": [
+        "Parfum",
+        "Perfume",
+        "Aroma"
+      ],
+      "category": "Other",
+      "functions": [],
+      "suitable_for": [],
+      "avoid_for": [
+        "Sensitive",
+        "Dry"
+      ],
+      "irritation_level": "High",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A known common skin irritant and one of the top causes of allergic contact dermatitis in skincare. Provides scent only, no functional skin benefit. Best avoided for sensitive or reactive skin.",
+      "note": "CeraVe/AAD; sensitive skin guidance consistently flags fragrance as a top irritant to avoid"
+    },
+    {
+      "id": 11,
+      "name": "Alcohol Denat",
+      "aliases": [
+        "Denatured Alcohol",
+        "SD Alcohol",
+        "Alcohol Denat."
+      ],
+      "category": "Preservative/Solvent",
+      "functions": [
+        "oil_control"
+      ],
+      "suitable_for": [
+        "Oily"
+      ],
+      "avoid_for": [
+        "Dry",
+        "Sensitive",
+        "Combination"
+      ],
+      "irritation_level": "High",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Denatured alcohol used as a solvent and quick-dry agent. Can provide a mattifying, oil-cutting feel short-term but disrupts the skin barrier and causes dryness/irritation with repeated use, especially on dry or sensitive skin.",
+      "note": "Dermatology consensus on drying alcohols in skincare formulations"
+    },
+    {
+      "id": 12,
+      "name": "Panthenol",
+      "aliases": [
+        "Pro-Vitamin B5",
+        "D-Panthenol"
+      ],
+      "category": "Humectant",
+      "functions": [
+        "hydration",
+        "soothing",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Provitamin B5 that hydrates, soothes irritation, and supports wound/barrier healing. Very well tolerated and commonly used to calm reactive or compromised skin.",
+      "note": "Paula's Choice Ingredient Dictionary"
+    },
+    {
+      "id": 13,
+      "name": "Azelaic Acid",
+      "aliases": [
+        "Nonanedioic Acid"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment",
+        "brightening",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination",
+        "Sensitive",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A carboxylic acid (naturally found in wheat, rye, and barley) with antibacterial, anti-inflammatory, and skin-brightening properties. Especially useful for acne-prone or rosacea-prone skin. Sold as a prescription drug at higher strengths in the US; up to 10% available over the counter.",
+      "note": "INCIDecoder; PMC clinical review (2024) — well tolerated relative to retinoids in acne studies"
+    },
+    {
+      "id": 14,
+      "name": "Centella Asiatica Extract",
+      "aliases": [
+        "Cica",
+        "Gotu Kola",
+        "Tiger Grass"
+      ],
+      "category": "Other",
+      "functions": [
+        "soothing",
+        "hydration",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Dry",
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Also known as Cica or Gotu Kola, a plant extract with documented anti-inflammatory, moisturizing, and wound-healing properties (via active compounds like madecassoside and asiaticoside). Commonly used to calm irritated or reactive skin.",
+      "note": "INCIDecoder, citing clinical studies on GAG/hyaluronic acid synthesis and anti-inflammatory effects"
+    },
+    {
+      "id": 15,
+      "name": "Squalane",
+      "aliases": [
+        "Phytosqualane",
+        "Hydrogenated Squalene"
+      ],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "hydration",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Oily",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A stable, lightweight oil (hydrogenated form of squalene) that mimics skin's natural lipids. Provides emollient, non-greasy hydration and is well tolerated even on oily or acne-prone skin despite being an oil.",
+      "note": "INCIDecoder — listed as irritancy 0, comedogenicity 0 across multiple product breakdowns"
+    },
+    {
+      "id": 16,
+      "name": "Zinc Oxide",
+      "aliases": [
+        "ZnO"
+      ],
+      "category": "Other",
+      "functions": [
+        "sun_protection",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A mineral (physical) sunscreen filter that sits on top of the skin and reflects UV rays. Also has mild anti-inflammatory/soothing properties, making it a common choice for sensitive or reactive skin needing sun protection.",
+      "note": "Dermatology consensus on mineral sunscreens; commonly recommended for sensitive skin and pregnancy"
+    },
+    {
+      "id": 17,
+      "name": "Urea",
+      "aliases": [
+        "Carbamide"
+      ],
+      "category": "Humectant",
+      "functions": [
+        "hydration",
+        "exfoliation"
+      ],
+      "suitable_for": [
+        "Dry"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A humectant and mild keratolytic naturally present in skin's moisturizing factor. At low concentrations it hydrates; at higher concentrations it helps soften and exfoliate very dry, rough, or scaly skin. Can sting on compromised or broken skin.",
+      "note": "Dermatology consensus; commonly used in eczema/dry skin formulations"
+    },
+    {
+      "id": 18,
+      "name": "Allantoin",
+      "aliases": [],
+      "category": "Other",
+      "functions": [
+        "soothing",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Dry",
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A skin-conditioning and anti-irritant compound often added to formulas to soothe and calm skin. Very gentle and frequently paired with active ingredients to offset their irritation potential.",
+      "note": "INCIDecoder — consistently listed as low irritancy, low comedogenicity across products"
+    },
+    {
+      "id": 19,
+      "name": "Dimethicone",
+      "aliases": [
+        "Polydimethylsiloxane",
+        "PDMS"
+      ],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "barrier_repair",
+        "hydration"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Sensitive",
+        "Normal",
+        "Combination",
+        "Oily"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A silicone that forms a breathable protective layer on the skin, locking in moisture and giving a smooth, silky finish. Non-comedogenic and non-irritating; commonly used in moisturizers and primers as a skin protectant.",
+      "note": "INCIDecoder; widely cited comedogenic ingredient lists rate it negligible risk"
+    },
+    {
+      "id": 20,
+      "name": "Tocopherol (Vitamin E)",
+      "aliases": [
+        "Vitamin E",
+        "Tocopheryl Acetate"
+      ],
+      "category": "Active",
+      "functions": [
+        "anti_aging",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Oily",
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 2,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A fat-soluble antioxidant vitamin that helps protect skin from oxidative stress and often pairs with Vitamin C for enhanced photoprotection. Some studies suggest a moderate comedogenic potential in leave-on formulas, so acne-prone skin may want to use it cautiously.",
+      "note": "PMC comedogenicity trial (2021); scanskinai/comedogenic ingredient reference lists — flagged as breakout-risk for acne-prone skin, unlike most other entries in this file which are near-zero comedogenic"
+    },
+    {
+      "id": 21,
+      "name": "Lactic Acid",
+      "aliases": [
+        "Milk Acid",
+        "Alpha Hydroxy Acid (Lactic)"
+      ],
+      "category": "Active",
+      "functions": [
+        "exfoliation",
+        "hydration",
+        "brightening"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal",
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Night"
+      ],
+      "description": "An alpha-hydroxy acid (AHA) that exfoliates the skin surface while also acting as a natural humectant, making it gentler and more hydrating than glycolic acid for similar exfoliation benefits. Improves texture and tone with regular use.",
+      "note": "Dermatology consensus; comedogenic ingredient reference lists rate it negligible risk"
+    },
+    {
+      "id": 22,
+      "name": "Titanium Dioxide",
+      "aliases": [
+        "TiO2"
+      ],
+      "category": "Other",
+      "functions": [
+        "sun_protection"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A mineral (physical) sunscreen filter that reflects and scatters UV rays. Generally well tolerated and a common choice for sensitive skin, though comedogenicity can vary depending on the overall sunscreen formulation.",
+      "note": "Dermatology consensus on mineral sunscreens"
+    },
+    {
+      "id": 23,
+      "name": "Triethanolamine",
+      "aliases": [
+        "TEA"
+      ],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A pH-adjusting and emulsifying agent used to stabilize formulas rather than to treat skin. Generally well tolerated at the low concentrations used in cosmetics, though it can be sensitizing for reactive skin in leave-on products.",
+      "note": "CIR (Cosmetic Ingredient Review) safety assessment; INCIDecoder"
+    },
+    {
+      "id": 24,
+      "name": "Olive Oil",
+      "aliases": [
+        "Olea Europaea Fruit Oil"
+      ],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "hydration",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Oily"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 2,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A plant oil rich in fatty acids and antioxidants that softens and moisturizes skin. Moderately comedogenic, so it can be heavy or pore-clogging for oily/acne-prone skin despite being gentle overall.",
+      "note": "Comedogenic ingredient reference lists; dermatology consensus on plant oils"
+    },
+    {
+      "id": 25,
+      "name": "Licorice Extract",
+      "aliases": [
+        "Glycyrrhiza Glabra Root Extract",
+        "Licorice Root Extract"
+      ],
+      "category": "Active",
+      "functions": [
+        "brightening",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Dry",
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A plant extract containing glabridin and licochalcone, used to brighten uneven tone and calm inflammation. Well tolerated and commonly paired with brightening or sensitive-skin formulas.",
+      "note": "INCIDecoder; dermatology literature on glabridin's tyrosinase-inhibiting effect"
+    },
+    {
+      "id": 26,
+      "name": "Biotin",
+      "aliases": [
+        "Vitamin B7",
+        "Vitamin H"
+      ],
+      "category": "Other",
+      "functions": [
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A B-vitamin more commonly associated with hair and nail health; topical skin benefit evidence is limited but it's considered a low-risk conditioning additive.",
+      "note": "INCIDecoder; limited direct clinical evidence for topical skin benefit"
+    },
+    {
+      "id": 27,
+      "name": "Chamomile Extract",
+      "aliases": [
+        "Chamomilla Recutita Extract",
+        "Matricaria Flower Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "soothing"
+      ],
+      "suitable_for": [
+        "Sensitive",
+        "Dry",
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A calming plant extract with anti-inflammatory properties, often included to offset irritation from active ingredients. Rare allergy risk in people sensitive to the daisy/ragweed family.",
+      "note": "INCIDecoder; dermatology consensus on soothing botanicals"
+    },
+    {
+      "id": 28,
+      "name": "Thyme Extract",
+      "aliases": [
+        "Thymus Vulgaris Extract"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A botanical with natural antibacterial properties sometimes used as a gentler alternative in acne formulas. Concentrated plant/essential-oil extracts can be sensitizing for reactive skin.",
+      "note": "INCIDecoder; limited formal pregnancy safety data for concentrated topical extract"
+    },
+    {
+      "id": 29,
+      "name": "Sulphur",
+      "aliases": [
+        "Sulfur",
+        "Colloidal Sulfur"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment",
+        "oil_control"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Dry",
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A mineral acne treatment with antibacterial, antifungal, and mildly keratolytic effects. Considered one of the gentler options for pregnancy-related acne, though it has a distinct sulfur odor and can be drying with frequent use.",
+      "note": "Dermatology consensus (AAD-aligned); considered a lower-risk pregnancy acne treatment relative to retinoids/salicylic acid"
+    },
+    {
+      "id": 30,
+      "name": "Tea Tree Oil",
+      "aliases": [
+        "Melaleuca Alternifolia Leaf Oil"
+      ],
+      "category": "Active",
+      "functions": [
+        "acne_treatment",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [
+        "Sensitive",
+        "Dry"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "An essential oil with natural antibacterial and anti-inflammatory activity against acne-causing bacteria. Undiluted or high concentrations can irritate or sensitize skin, especially reactive skin.",
+      "note": "Well studied for acne when diluted, but concentrated essential-oil pregnancy safety data is limited; oral/high-dose essential oil use is more clearly cautioned against than typical diluted topical cosmetic use. Consult a physician for concentrated use."
+    },
+    {
+      "id": 31,
+      "name": "Black Seed Extract",
+      "aliases": [
+        "Nigella Sativa Extract",
+        "Black Cumin Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "soothing",
+        "anti_aging"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A botanical extract with antioxidant and anti-inflammatory properties, traditionally used for skin conditioning. Topical cosmetic-use safety data specific to pregnancy is limited.",
+      "note": "Limited human pregnancy safety data for topical cosmetic use; some traditional/oral use sources flag caution in pregnancy, so treated as consult-a-physician rather than a confirmed safe or unsafe finding."
+    },
+    {
+      "id": 32,
+      "name": "Caffeine",
+      "aliases": [],
+      "category": "Active",
+      "functions": [
+        "oil_control",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "An antioxidant stimulant that temporarily tightens the look of skin, reduces puffiness, and has mild anti-inflammatory effects. Topical absorption is minimal, distinct from oral/dietary caffeine intake concerns.",
+      "note": "INCIDecoder; topical systemic absorption considered low relative to oral intake"
+    },
+    {
+      "id": 33,
+      "name": "Algae Extract",
+      "aliases": [
+        "Seaweed Extract",
+        "Algae Extractum"
+      ],
+      "category": "Other",
+      "functions": [
+        "hydration",
+        "soothing",
+        "anti_aging"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A marine-derived extract valued for antioxidant and hydrating properties, often included in anti-aging and soothing formulas. Generally well tolerated.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 34,
+      "name": "Dead Sea Salts",
+      "aliases": [
+        "Maris Sal",
+        "Sea Salt"
+      ],
+      "category": "Other",
+      "functions": [
+        "exfoliation",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive",
+        "Dry"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "Mineral-rich salts used for gentle physical exfoliation and reported anti-inflammatory benefit for conditions like psoriasis. Can be drying or irritating on compromised, dry, or sensitive skin.",
+      "note": "Dermatology literature on Dead Sea mineral therapy"
+    },
+    {
+      "id": 35,
+      "name": "Rosemary Extract",
+      "aliases": [
+        "Rosmarinus Officinalis Leaf Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "soothing",
+        "anti_aging"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "An antioxidant botanical extract used for its anti-inflammatory and preservative-boosting properties. Topical cosmetic-grade extract is generally low-risk, though rosemary essential oil is more commonly flagged with pregnancy caution.",
+      "note": "Dilute cosmetic-grade extract is generally low-risk, but rosemary essential oil (a more concentrated form) is commonly flagged with pregnancy caution and formal human data on the extract specifically is limited, so a precautionary null is used."
+    },
+    {
+      "id": 36,
+      "name": "Arnica Montana Flower Extract",
+      "aliases": [
+        "Arnica Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "soothing"
+      ],
+      "suitable_for": [
+        "Normal",
+        "Oily",
+        "Combination",
+        "Dry"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A botanical extract traditionally used to reduce the appearance of bruising and inflammation. Should not be applied to broken skin; oral arnica is avoided in pregnancy, and topical use is generally treated with the same caution pending more data.",
+      "note": "Oral/internal arnica is avoided in pregnancy due to documented uterine-stimulant risk; topical cosmetic-extract data is limited, so the same caution is applied pending more evidence. Not for use on broken skin regardless."
+    },
+    {
+      "id": 37,
+      "name": "Zinc Gluconate",
+      "aliases": [],
+      "category": "Other",
+      "functions": [
+        "oil_control",
+        "soothing"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A zinc salt used for its soothing and sebum-regulating properties, often included in acne or oil-control formulas as a gentler alternative to zinc oxide's occlusive/sunscreen role.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 38,
+      "name": "Arginine",
+      "aliases": [
+        "L-Arginine"
+      ],
+      "category": "Humectant",
+      "functions": [
+        "hydration"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "An amino acid that helps balance formula pH and supports skin hydration. Well tolerated with no notable irritation profile.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 39,
+      "name": "Beeswax",
+      "aliases": [
+        "Cera Alba"
+      ],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Oily"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 2,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A natural occlusive that forms a protective barrier to lock in moisture. Moderately comedogenic, so it's better suited to dry/normal skin than acne-prone or oily skin.",
+      "note": "Comedogenic ingredient reference lists"
+    },
+    {
+      "id": 40,
+      "name": "Propylene Glycol",
+      "aliases": [],
+      "category": "Humectant",
+      "functions": [
+        "hydration"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A small-molecule humectant and solvent that helps other ingredients penetrate and keeps formulas from drying out. Non-comedogenic, though it can be a mild irritant/sensitizer for a subset of reactive skin.",
+      "note": "CIR safety assessment; INCIDecoder"
+    },
+    {
+      "id": 41,
+      "name": "Honey",
+      "aliases": [
+        "Mel"
+      ],
+      "category": "Other",
+      "functions": [
+        "hydration",
+        "soothing",
+        "acne_treatment"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A natural humectant with mild antibacterial and wound-healing properties (most studied in Manuka form). Generally well tolerated; rare allergy risk for those sensitive to bee products.",
+      "note": "Dermatology literature on honey/Manuka honey topical use"
+    },
+    {
+      "id": 42,
+      "name": "Phenoxyethanol",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "One of the most widely used cosmetic preservatives, valued for a low irritation and low allergy profile compared to alternatives. Considered safe at the low concentrations used in leave-on and rinse-off products.",
+      "note": "CIR safety assessment; EU Cosmetics Regulation permits up to 1%"
+    },
+    {
+      "id": 43,
+      "name": "Ethylhexylglycerin",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A skin-conditioning co-preservative commonly paired with phenoxyethanol to boost preservative efficacy at lower total concentrations. Well tolerated.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 44,
+      "name": "Carbomer",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A synthetic thickening/gelling agent used to give formulas their texture; has no independent skin-active function and is considered inert and non-irritating.",
+      "note": "CIR safety assessment"
+    },
+    {
+      "id": 45,
+      "name": "Disodium EDTA",
+      "aliases": [
+        "EDTA"
+      ],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A chelating agent that binds trace metal ions to keep formulas stable and preservatives effective. Has no independent skin-active function; well tolerated at cosmetic-use levels.",
+      "note": "CIR safety assessment"
+    },
+    {
+      "id": 46,
+      "name": "Cetyl Alcohol",
+      "aliases": [],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "barrier_repair",
+        "hydration"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal",
+        "Combination",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A fatty alcohol emollient/thickener, unrelated to drying alcohols like alcohol denat. Softens and conditions skin with a low irritation and low comedogenicity profile.",
+      "note": "INCIDecoder; frequently confused with drying 'alcohol' ingredients despite acting as an emollient"
+    },
+    {
+      "id": 47,
+      "name": "Cetearyl Alcohol",
+      "aliases": [],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "barrier_repair",
+        "hydration"
+      ],
+      "suitable_for": [
+        "Dry",
+        "Normal",
+        "Combination",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A fatty alcohol blend (cetyl + stearyl) used as an emulsion stabilizer and emollient. Non-drying despite the 'alcohol' name; well tolerated across skin types.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 48,
+      "name": "Caprylic/Capric Triglyceride",
+      "aliases": [],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "hydration",
+        "barrier_repair"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A lightweight plant-derived emollient (often from coconut/palm oil) that conditions skin without a heavy or greasy feel. Non-comedogenic and well tolerated even on oily/acne-prone skin.",
+      "note": "INCIDecoder; comedogenic ingredient reference lists rate it negligible risk"
+    },
+    {
+      "id": 49,
+      "name": "Sodium Laureth Sulfate",
+      "aliases": [
+        "SLES"
+      ],
+      "category": "Preservative/Solvent",
+      "functions": [
+        "oil_control"
+      ],
+      "suitable_for": [
+        "Oily"
+      ],
+      "avoid_for": [
+        "Dry",
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A foaming cleansing surfactant that effectively removes oil and dirt but can strip natural lipids and disrupt the skin barrier with frequent use, especially on dry or sensitive skin. As a rinse-off ingredient, systemic absorption is minimal.",
+      "note": "Dermatology consensus on sulfate cleansers"
+    },
+    {
+      "id": 50,
+      "name": "Cocamide MEA",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A foam-boosting and thickening agent derived from coconut fatty acids, used in cleansers. Has no independent skin-treatment function and can be sensitizing for reactive skin in some formulations.",
+      "note": "CIR safety assessment; documented as an occasional contact sensitizer"
+    },
+    {
+      "id": 51,
+      "name": "Oryza Sativa (Rice) Extract",
+      "aliases": [
+        "Rice Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "brightening",
+        "soothing",
+        "hydration"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A gentle botanical extract traditionally used for brightening and soothing, popular in K-beauty formulas. Well tolerated with no notable irritation profile.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 52,
+      "name": "Hibiscus Sabdariffa Flower Extract",
+      "aliases": [
+        "Hibiscus Extract",
+        "Roselle Extract"
+      ],
+      "category": "Other",
+      "functions": [
+        "exfoliation",
+        "anti_aging"
+      ],
+      "suitable_for": [
+        "Normal",
+        "Combination",
+        "Dry"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A botanical extract naturally rich in fruit acids, sometimes marketed as a 'natural retinol alternative' for mild exfoliation and firming. Formal clinical and pregnancy safety data are limited.",
+      "note": "Formal clinical and pregnancy-safety data for the topical cosmetic extract is limited; some traditional sources caution against internal hibiscus use in pregnancy, so applied here as a precautionary null pending more topical-specific evidence."
+    },
+    {
+      "id": 53,
+      "name": "Pearl Extract",
+      "aliases": [
+        "Pearl Powder"
+      ],
+      "category": "Other",
+      "functions": [
+        "brightening"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A traditional ingredient (calcium carbonate-rich) used mainly for brightening/radiance claims. Considered low-risk cosmetically, but formal clinical and pregnancy safety data are limited.",
+      "note": "Primarily a traditional/cosmetic ingredient with little formal clinical study; no established pregnancy safety data exists either way, so treated as inconclusive rather than a clear yes/no."
+    },
+    {
+      "id": 54,
+      "name": "1,2-Hexanediol",
+      "aliases": [
+        "Hexanediol"
+      ],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A solvent and co-preservative/humectant used to boost preservative efficacy and improve texture. Considered a low-irritation alternative used widely in Korean skincare formulations.",
+      "note": "INCIDecoder"
+    },
+    {
+      "id": 55,
+      "name": "Butylene Glycol",
+      "aliases": [],
+      "category": "Humectant",
+      "functions": [
+        "hydration"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A lightweight humectant and solvent that helps other ingredients penetrate while adding hydration. Non-comedogenic and well tolerated, including on acne-prone skin.",
+      "note": "INCIDecoder; comedogenic ingredient reference lists rate it negligible risk"
+    },
+    {
+      "id": 56,
+      "name": "Avobenzone",
+      "aliases": [
+        "Butyl Methoxydibenzoylmethane"
+      ],
+      "category": "Other",
+      "functions": [
+        "sun_protection"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A chemical (organic) UVA sunscreen filter. Effective but photo-unstable unless paired with stabilizers, and can be sensitizing for reactive skin. Many dermatology and pregnancy-safety sources recommend mineral filters (zinc oxide/titanium dioxide) over chemical filters like this one during pregnancy as a precaution.",
+      "note": "FDA GRASE review found systemic absorption after typical use; EU/FDA have requested more safety data. No proven harm in pregnancy, but evidence is precautionary and dermatologists commonly recommend mineral filters (zinc oxide/titanium dioxide) as the lower-uncertainty choice."
+    },
+    {
+      "id": 57,
+      "name": "Octocrylene",
+      "aliases": [],
+      "category": "Other",
+      "functions": [
+        "sun_protection"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Medium",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A chemical UVB sunscreen filter often paired with avobenzone for stability. Systemically absorbed with repeated use and one of the ingredients the FDA has requested more safety data on; commonly flagged for precautionary avoidance during pregnancy in favor of mineral filters.",
+      "note": "Systemically absorbed with repeated use; EU Scientific Committee on Consumer Safety (2021) flagged data gaps rather than confirmed harm. Precautionary recommendation to prefer mineral filters during pregnancy; not established as unsafe."
+    },
+    {
+      "id": 58,
+      "name": "Ethylhexyl Methoxycinnamate",
+      "aliases": [
+        "Octinoxate",
+        "Octyl Methoxycinnamate"
+      ],
+      "category": "Other",
+      "functions": [
+        "sun_protection"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "One of the most common chemical UVB sunscreen filters. Readily absorbed through skin; commonly flagged for precautionary avoidance during pregnancy in favor of mineral filters (zinc oxide/titanium dioxide).",
+      "note": "One of the most readily skin-absorbed chemical UV filters (FDA GRASE review). Human pregnancy outcome data is limited, so guidance is precautionary — mineral filters are commonly suggested as the lower-uncertainty alternative rather than this being proven harmful."
+    },
+    {
+      "id": 59,
+      "name": "Homosalate",
+      "aliases": [],
+      "category": "Other",
+      "functions": [
+        "sun_protection"
+      ],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal"
+      ],
+      "avoid_for": [
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": null,
+      "comedogenic": null,
+      "use_time": [
+        "Morning"
+      ],
+      "description": "A chemical UVB sunscreen filter that also boosts the penetration of other ingredients. The EU has restricted its concentration over endocrine-disruption concerns; commonly flagged for precautionary avoidance during pregnancy in favor of mineral filters.",
+      "note": "EU Scientific Committee on Consumer Safety (2021) proposed a concentration limit (1.4%) over endocrine-disruption concerns, and it boosts penetration of other ingredients. Effect is dose/concentration-dependent and not a confirmed-harm finding, so treated as consult-a-physician rather than a flat avoid."
+    },
+    {
+      "id": 60,
+      "name": "Isopropyl Myristate",
+      "aliases": [],
+      "category": "Occlusive/Emollient",
+      "functions": [
+        "hydration"
+      ],
+      "suitable_for": [
+        "Dry"
+      ],
+      "avoid_for": [
+        "Oily",
+        "Sensitive"
+      ],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 5,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A synthetic emollient that gives products a light, fast-absorbing feel, but is one of the most highly comedogenic ingredients used in cosmetics. Best avoided by acne-prone or oily skin.",
+      "note": "Widely cited comedogenic ingredient reference lists rate it 4-5 (highly comedogenic)"
+    },
+    {
+      "id": 61,
+      "name": "Sodium Benzoate",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A common, low-irritation cosmetic preservative that has no independent skin-active function. Considered safe at the low concentrations used in skincare.",
+      "note": "CIR safety assessment"
+    },
+    {
+      "id": 62,
+      "name": "Xanthan Gum",
+      "aliases": [],
+      "category": "Preservative/Solvent",
+      "functions": [],
+      "suitable_for": [
+        "Oily",
+        "Dry",
+        "Combination",
+        "Normal",
+        "Sensitive"
+      ],
+      "avoid_for": [],
+      "irritation_level": "Low",
+      "pregnancy_safe": true,
+      "comedogenic": 0,
+      "use_time": [
+        "Morning",
+        "Night"
+      ],
+      "description": "A natural, fermentation-derived thickening agent used to adjust texture. Has no independent skin-active function; considered inert and non-irritating.",
+      "note": "INCIDecoder"
+    }
+  ]
+}

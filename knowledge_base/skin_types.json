@@ -1,0 +1,179 @@
+{
+  "source_note": "Compiled from dermatologist-reviewed content (CeraVe Skin Smarts, reviewed by Dr. Nkem Ugonabo, MD) and American Academy of Dermatology guidance. Paraphrased and restructured for internal knowledge base use.",
+  "skin_types": [
+    {
+      "id": "Oily",
+      "name": "Oily Skin",
+      "primary_indicator": "sebum_overproduction",
+      "characteristics": [
+        "Shiny or greasy appearance, especially in the T-zone (forehead, nose, chin)",
+        "Enlarged, more visible pores",
+        "Prone to blackheads and acne blemishes",
+        "Skin often feels heavier or thicker to the touch"
+      ],
+      "causes": [
+        "Overactive sebaceous glands",
+        "Genetics",
+        "Hormonal fluctuations",
+        "Stress",
+        "High humidity"
+      ],
+      "possible_upside": "May show fewer visible fine lines/wrinkles over time due to natural oil content, per AAD.",
+      "home_test_watch_and_wait": "Skin appears shiny all over the face after cleansing and 30 minutes of no product.",
+      "home_test_blotting_sheet": "Blotting sheets pick up significant oil from all areas of the face.",
+      "care_tips": {
+        "cleanser": "Oil-free, non-comedogenic foaming cleanser to remove excess surface oil without stripping the barrier.",
+        "moisturizer": "Still required daily; choose oil-free, non-comedogenic, gel-based formulas rather than heavy creams.",
+        "avoid": [
+          "Heavy oil-based products",
+          "Comedogenic formulas"
+        ]
+      },
+      "recommended_ingredient_functions": [
+        "oil_control",
+        "non_comedogenic",
+        "lightweight_hydration"
+      ]
+    },
+    {
+      "id": "Dry",
+      "name": "Dry Skin",
+      "primary_indicator": "sebum_underproduction",
+      "characteristics": [
+        "Skin feels tight, especially after washing",
+        "Visible flaking, roughness, or scaliness",
+        "Dull or dehydrated appearance",
+        "More visible fine lines",
+        "Can be itchy or irritated"
+      ],
+      "causes": [
+        "Naturally lower sebum production",
+        "Compromised skin barrier (reduced ability to retain water)",
+        "Harsh or abrasive skincare habits",
+        "Long, hot showers",
+        "Environmental factors (cold, low humidity)"
+      ],
+      "home_test_watch_and_wait": "Skin feels flaky, rough, or tight 30 minutes after cleansing.",
+      "home_test_blotting_sheet": "Blotting sheets absorb little to no oil from any area.",
+      "care_tips": {
+        "cleanser": "Gentle, fragrance-free, hydrating cleanser (cream or oil-based cleansing formulas work well).",
+        "moisturizer": "Thicker, cream-based (not lotion) formulas applied immediately after cleansing to lock in moisture.",
+        "key_ingredients_to_look_for": [
+          "ceramides",
+          "hyaluronic_acid",
+          "glycerin"
+        ]
+      },
+      "recommended_ingredient_functions": [
+        "barrier_repair",
+        "deep_hydration",
+        "moisture_retention"
+      ]
+    },
+    {
+      "id": "Combination",
+      "name": "Combination Skin",
+      "primary_indicator": "mixed_sebum_distribution",
+      "characteristics": [
+        "Oily T-zone (forehead, nose, chin)",
+        "Drier cheeks",
+        "Presentation varies widely between individuals",
+        "May show shine in oily areas and redness/patchiness or ashy/grayish tone in drier areas (more visible on deeper skin tones)",
+        "Can shift with seasons, stress, or hormones"
+      ],
+      "causes": [
+        "Uneven sebaceous gland activity across facial zones",
+        "Genetics",
+        "Seasonal and hormonal changes"
+      ],
+      "home_test_watch_and_wait": "Shine appears only around the T-zone; cheeks may feel normal to dry.",
+      "home_test_blotting_sheet": "Sheets pick up oil mainly from the T-zone only.",
+      "care_tips": {
+        "approach": "Zone-specific care rather than one product for the whole face.",
+        "dry_areas": "Apply thicker, cream-based moisturizer.",
+        "oily_areas": "Apply lighter, gel-based moisturizer.",
+        "extra_tip": "Blotting papers can be used on the T-zone during the day to manage shine."
+      },
+      "recommended_ingredient_functions": [
+        "balancing",
+        "zone_specific_hydration",
+        "oil_control_and_barrier_repair"
+      ]
+    },
+    {
+      "id": "Normal",
+      "name": "Normal Skin",
+      "primary_indicator": "balanced_sebum",
+      "characteristics": [
+        "Skin feels hydrated and comfortable",
+        "Not notably oily or dry in any area",
+        "Smoother texture with less visible pores",
+        "Generally not prone to a specific recurring concern",
+        "Lower tendency toward sensitivity"
+      ],
+      "causes": [
+        "Balanced sebum production",
+        "Generally intact skin barrier"
+      ],
+      "home_test_watch_and_wait": "Skin feels hydrated, not dry or oily anywhere, 30 minutes after cleansing.",
+      "home_test_blotting_sheet": "Minimal oil picked up from all areas.",
+      "care_tips": {
+        "cleanser": "Gentle daily cleanser.",
+        "moisturizer": "Still necessary daily; formulas with ceramides and hyaluronic acid help maintain barrier and hydration.",
+        "note": "Can still be prone to acne regardless of skin type; non-comedogenic products still recommended."
+      },
+      "recommended_ingredient_functions": [
+        "maintenance_hydration",
+        "barrier_support"
+      ]
+    },
+    {
+      "id": "Sensitive",
+      "name": "Sensitive Skin",
+      "primary_indicator": "reactivity_not_sebum_based",
+      "characteristics": [
+        "Can co-occur with any of the other four skin types",
+        "Reacts more easily to products or environmental triggers",
+        "May show redness, stinging, burning, or irritation after product use"
+      ],
+      "causes": [
+        "Compromised skin barrier (suspected, per current research)",
+        "Exposure to irritants such as fragrance",
+        "Environmental factors like pollution",
+        "Exact cause not yet fully established medically"
+      ],
+      "care_tips": {
+        "general": "Best evaluated with a board-certified dermatologist to identify specific triggers.",
+        "avoid": [
+          "Fragrance",
+          "Harsh or drying formulas",
+          "Known personal irritant ingredients"
+        ],
+        "recommended_approach": "Gentle, fragrance-free routine with minimal, well-tolerated ingredients."
+      },
+      "recommended_ingredient_functions": [
+        "fragrance_free",
+        "low_irritation",
+        "barrier_support"
+      ]
+    }
+  ],
+  "assessment_methods": {
+    "watch_and_wait_method": {
+      "steps": [
+        "Wash face with a gentle cleanser",
+        "Pat dry",
+        "Wait 30 minutes without applying products",
+        "Observe skin in a mirror"
+      ]
+    },
+    "blotting_sheet_method": {
+      "steps": [
+        "Wash face and pat dry",
+        "Wait 30 minutes",
+        "Press blotting sheets to different facial zones",
+        "Hold sheets to light and compare oil absorbed per zone"
+      ]
+    }
+  }
+}

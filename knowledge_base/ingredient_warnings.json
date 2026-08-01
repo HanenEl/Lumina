@@ -1,0 +1,287 @@
+{
+  "_schema": {
+    "description": "Combined interaction + condition warnings, referencing ingredients.json by integer id.",
+    "fields": {
+      "id": "stable string id",
+      "warning_type": "'interaction' | 'condition'",
+      "ingredient_ids": "array of ingredient ids from ingredients.json. Length 2 for 'interaction'. Length 1 for 'condition'.",
+      "ingredient_names_ref": "display names, for human readability only — not used for matching",
+      "condition": "string, only for warning_type='condition' (e.g. 'pregnancy', 'rosacea'). null for 'interaction'",
+      "description": "plain-language explanation",
+      "is_hard_contraindication": "boolean — true is rare, most skincare guidance is best-practice/caution, not absolute",
+      "severity": "'Low' | 'Medium' | 'High'",
+      "action": "practical guidance",
+      "note": "source citation"
+    }
+  },
+  "entries": [
+    {
+      "id": "retinol_x_benzoyl_peroxide",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        3,
+        8
+      ],
+      "ingredient_names_ref": [
+        "Retinol",
+        "Benzoyl Peroxide"
+      ],
+      "condition": null,
+      "description": "Combining can reduce retinol's stability/effectiveness and significantly increase dryness and irritation, since both are already high-irritation actives.",
+      "is_hard_contraindication": false,
+      "severity": "High",
+      "action": "Use on alternate nights (e.g. retinol PM one night, benzoyl peroxide the next), or one AM / one PM.",
+      "note": "Dermatology consensus on combining high-irritation actives"
+    },
+    {
+      "id": "retinol_x_glycolic_acid",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        3,
+        9
+      ],
+      "ingredient_names_ref": [
+        "Retinol",
+        "Glycolic Acid"
+      ],
+      "condition": null,
+      "description": "Both increase cell turnover and sensitize the skin; combined same-routine use raises the risk of redness, peeling, and barrier disruption.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Avoid using in the same routine. Alternate nights or space out by building tolerance gradually.",
+      "note": "AAD-aligned general exfoliation/retinization guidance"
+    },
+    {
+      "id": "retinol_x_salicylic_acid",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        3,
+        2
+      ],
+      "ingredient_names_ref": [
+        "Retinol",
+        "Salicylic Acid"
+      ],
+      "condition": null,
+      "description": "Similar to combining retinol with other exfoliating acids — cumulative irritation risk, especially for drier or sensitive skin.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Introduce one at a time; if using both, alternate nights rather than layering together.",
+      "note": "Dermatology consensus on layering actives"
+    },
+    {
+      "id": "vitaminc_x_retinol",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        4,
+        3
+      ],
+      "ingredient_names_ref": [
+        "Vitamin C (L-Ascorbic Acid)",
+        "Retinol"
+      ],
+      "condition": null,
+      "description": "L-Ascorbic Acid works best at a low pH while retinol is more stable at a more neutral pH; combining can reduce effectiveness of both and increase irritation. This is a formulation/best-practice caution, not a safety hazard.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Common practical approach: Vitamin C in the AM routine, retinol in the PM routine.",
+      "note": "Widely cited formulation chemistry guidance (best-practice, not high-certainty clinical evidence)"
+    },
+    {
+      "id": "retinol_x_pregnancy",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        3
+      ],
+      "ingredient_names_ref": [
+        "Retinol"
+      ],
+      "condition": "pregnancy",
+      "description": "Topical retinol and other retinoids are generally avoided during pregnancy due to potential vitamin A-related risk to fetal development.",
+      "is_hard_contraindication": true,
+      "severity": "High",
+      "action": "Avoid. Consult an OB/GYN or dermatologist before use.",
+      "note": "AAD; consistent across multiple dermatology and OB sources"
+    },
+    {
+      "id": "salicylic_acid_x_pregnancy",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        2
+      ],
+      "ingredient_names_ref": [
+        "Salicylic Acid"
+      ],
+      "condition": "pregnancy",
+      "description": "Low-concentration topical use (under ~2%) is generally considered lower-risk, but higher concentrations or frequent large-area use should be discussed with a doctor.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Use with caution; prefer low concentrations; consult a doctor for confirmation.",
+      "note": "AAD guidance on pregnancy skincare"
+    },
+    {
+      "id": "fragrance_x_sensitive",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        10
+      ],
+      "ingredient_names_ref": [
+        "Fragrance"
+      ],
+      "condition": "Sensitive",
+      "description": "Fragrance is one of the most common triggers of allergic contact dermatitis and irritation in sensitive or reactive skin.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Prefer fragrance-free formulas.",
+      "note": "AAD; consistent sensitive-skin guidance"
+    },
+    {
+      "id": "fragrance_x_rosacea",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        10
+      ],
+      "ingredient_names_ref": [
+        "Fragrance"
+      ],
+      "condition": "rosacea",
+      "description": "Fragrance is a commonly reported trigger for rosacea flare-ups.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Avoid fragranced products; patch test unscented alternatives.",
+      "note": "Dermatology consensus on rosacea trigger avoidance"
+    },
+    {
+      "id": "azelaic_acid_x_retinol",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        13,
+        3
+      ],
+      "ingredient_names_ref": [
+        "Azelaic Acid",
+        "Retinol"
+      ],
+      "condition": null,
+      "description": "Both are active ingredients that can increase sensitivity; combined use may raise irritation risk for some users, though azelaic acid is generally well tolerated compared to other actives.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Introduce gradually; monitor for irritation before using together nightly.",
+      "note": "General dermatology consensus on layering actives"
+    },
+    {
+      "id": "urea_x_broken_skin",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        17
+      ],
+      "ingredient_names_ref": [
+        "Urea"
+      ],
+      "condition": "compromised_or_broken_skin",
+      "description": "At higher concentrations, urea can sting or irritate skin that is broken, cracked, or has an impaired barrier.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Avoid applying to broken or highly compromised skin; patch test first.",
+      "note": "Dermatology consensus on keratolytic use"
+    },
+    {
+      "id": "tocopherol_x_acne_prone",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        20
+      ],
+      "ingredient_names_ref": [
+        "Tocopherol (Vitamin E)"
+      ],
+      "condition": "active_acne",
+      "description": "Some studies indicate a moderate comedogenic potential in leave-on formulas, which may worsen breakouts for acne-prone or oily skin.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Use with caution on acne-prone skin; monitor for new breakouts.",
+      "note": "PMC comedogenicity trial (2021)"
+    },
+    {
+      "id": "lactic_acid_x_retinol",
+      "warning_type": "interaction",
+      "ingredient_ids": [
+        21,
+        3
+      ],
+      "ingredient_names_ref": [
+        "Lactic Acid",
+        "Retinol"
+      ],
+      "condition": null,
+      "description": "Similar to combining retinol with other exfoliating acids — cumulative irritation risk, though lactic acid tends to be gentler than glycolic acid.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Introduce gradually; alternate nights if irritation occurs.",
+      "note": "Dermatology consensus on layering actives"
+    },
+    {
+      "id": "alcohol_denat_x_dry_sensitive_dry",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        11
+      ],
+      "ingredient_names_ref": [
+        "Alcohol Denat"
+      ],
+      "condition": "Dry",
+      "description": "Denatured alcohol can strip the skin barrier and worsen dryness or reactivity with repeated use.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Avoid or limit frequency; prioritize alcohol-free formulas for these skin types.",
+      "note": "Dermatology consensus on drying alcohols"
+    },
+    {
+      "id": "alcohol_denat_x_dry_sensitive_sensitive",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        11
+      ],
+      "ingredient_names_ref": [
+        "Alcohol Denat"
+      ],
+      "condition": "Sensitive",
+      "description": "Denatured alcohol can strip the skin barrier and worsen dryness or reactivity with repeated use.",
+      "is_hard_contraindication": false,
+      "severity": "Medium",
+      "action": "Avoid or limit frequency; prioritize alcohol-free formulas for these skin types.",
+      "note": "Dermatology consensus on drying alcohols"
+    },
+    {
+      "id": "fragrance_x_pregnancy",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        10
+      ],
+      "ingredient_names_ref": [
+        "Fragrance"
+      ],
+      "condition": "pregnancy",
+      "description": "Fragrance itself is not established as unsafe during pregnancy, but it is a common irritant and pregnancy can increase skin sensitivity, so reactions may be more likely.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Prefer fragrance-free formulas as a general precaution; not a strict contraindication.",
+      "note": "General dermatology caution; not a specific pregnancy safety finding"
+    },
+    {
+      "id": "alcohol_denat_x_pregnancy",
+      "warning_type": "condition",
+      "ingredient_ids": [
+        11
+      ],
+      "ingredient_names_ref": [
+        "Alcohol Denat"
+      ],
+      "condition": "pregnancy",
+      "description": "No specific pregnancy safety data; treated cautiously mainly because it can dry out and irritate skin, which may be more reactive during pregnancy.",
+      "is_hard_contraindication": false,
+      "severity": "Low",
+      "action": "Use with caution; not a strict contraindication.",
+      "note": "General dermatology caution; not a specific pregnancy safety finding"
+    }
+  ]
+}
