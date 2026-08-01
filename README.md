@@ -28,6 +28,10 @@ Every skin is unique, and every skincare decision matters. Lumina is built to ma
 
 - **AI-Powered Product Analysis** – Analyze skincare products based on your unique skin profile to determine compatibility, suitability, and tailored recommendations.
 
+
+
+
+
 - **Intelligent Ingredient Insights** – Understand the role of each ingredient, discover beneficial components, and identify potential concerns for your skin.
 
 - **Personalized Usage Guidance** – Receive clear explanations, practical usage advice, and routine guidance tailored to your skin's needs.
@@ -67,7 +71,14 @@ Explain how to install and run the project.
 
 # 🚀 Usage
 
-Describe how to use the project.
+1. **Launch Application:** Open the Streamlit app in your browser.
+2. **Skin Profile Assessment:** Complete the quick quiz (or directly confirm your skin type).
+3. **Facial Image Analysis (Optional):** Upload a photo for AI-assisted skin evaluation.
+4. **Product Ingredient Label:** Upload an image of any skincare product label.
+5. **Select Category:** Choose the product type (*e.g., Cleanser, Moisturizer, Sunscreen*).
+6. **AI Ingredient Extraction:** Lumina automatically scans and extracts the ingredient list.
+7. **Personalized Evaluation:** Ingredients are cross-referenced against your specific skin profile.
+8. **Get Insights:** Receive a detailed safety evaluation, ingredient breakdown, warnings, and usage tips.
 
 ---
 
@@ -77,17 +88,29 @@ Add screenshots, GIFs, or a demo video.
 
 ---
 
-# 📈 Results
+# 📊 Results
 
-Share your project's outcomes or achievements.
+Lumina successfully delivers personalized skincare product evaluations by combining user-specific skin profiles with AI-powered ingredient analysis.
+
+The application can:
+
+* Build a personalized skin profile using questionnaires and optional facial image analysis.
+* Extract ingredient lists directly from product labels using OCR.
+* Analyze ingredient compatibility based on the user's skin characteristics.
+* Identify beneficial and potentially concerning ingredients.
+* Generate clear explanations, personalized recommendations, warnings, and usage guidance for each product.
+
 
 ---
 
 # 🔮 Future Improvements
 
-* Improvement 1
-* Improvement 2
-* Improvement 3
+* Support barcode scanning for faster product identification.
+* Expand the skincare knowledge base with additional ingredients and formulations.
+* Recommend complete skincare routines instead of evaluating individual products.
+* Track users' skincare history and product compatibility over time.
+* Improve facial skin analysis with a dedicated dermatology vision model.
+* Deploy the application as a cloud-hosted web service.
 
 ---
 
