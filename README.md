@@ -95,15 +95,26 @@ pip install -r requirements.txt
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
-    <img src="assets/demo.png" alt="Lumina Demo" width="800">
+    <img src="assets/demo.png" alt="Lumina Demo" width="45%">
+  </a>
+  <br>
+  <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
+    <img src="assets/SkinProfile.png" alt="Skin Profile" width="32%">
+  </a>
+  <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
+    <img src="assets/IngredientAnalysis.png" alt="Ingredient Analysis" width="32%">
+  </a>
+  <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
+    <img src="assets/AnalyzedProduct.png" alt="Analysis Result" width="32%">
   </a>
 </p>
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
-    Watch the full demo video
+    <strong>Watch the Full Demo Video</strong>
   </a>
 </p>
+
 
 ---
 
