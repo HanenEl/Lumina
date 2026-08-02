@@ -65,7 +65,16 @@ Every skin is unique, and every skincare decision matters. Lumina is built to ma
 
 # ⚙️ Installation
 
-Explain how to install and run the project.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/HanenEl/Lumina.git
+cd Lumina
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
@@ -84,7 +93,17 @@ Explain how to install and run the project.
 
 # 📸 Demo
 
-Add screenshots, GIFs, or a demo video.
+<p align="center">
+  <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
+    <img src="assets/demo.png" alt="Lumina Demo" width="800">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1CjZIjUyPrdJXN7NkoTUWT4fMoK16-_Bx/view?usp=drive_link">
+    Watch the full demo video
+  </a>
+</p>
 
 ---
 
