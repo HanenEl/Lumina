@@ -17,7 +17,19 @@
 
 # 📖 Project Overview
 
-Every skin is unique, and every skincare decision matters. Lumina is built to make choosing skincare products easier, clearer, and more personal. By helping users understand ingredients and discover products that truly suit their skin, Lumina transforms uncertainty into confidence one skincare choice at a time.
+> **Where every ingredient tells a story, and every skin gets its own.**
+
+Skincare isn't about finding the **"best"** product, it's about finding the **right** product for *your* skin.
+
+Every person's skin has unique needs, sensitivities, and concerns, yet skincare decisions are often influenced by trends, marketing, or recommendations that were never meant for them.
+
+**Lumina** was built to change that.
+
+Lumina is an AI-powered skincare assistant designed to make skincare more personalized, transparent, and easier to understand. By creating a personalized skin profile and analyzing product ingredient lists, Lumina helps users discover whether a product truly matches their skin's unique needs.
+
+Rather than providing a simple **"Suitable"** or **"Not Suitable"** result, Lumina explains **why** a product is recommended, highlights the ingredients that matter, identifies potential concerns, and provides clear, personalized insights to support informed skincare decisions.
+
+Our mission is simple: replace guesswork with knowledge, helping people build skincare routines they can understand and trust.
 
 
 ---
