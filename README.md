@@ -28,10 +28,6 @@ Every skin is unique, and every skincare decision matters. Lumina is built to ma
 
 - **AI-Powered Product Analysis** – Analyze skincare products based on your unique skin profile to determine compatibility, suitability, and tailored recommendations.
 
-
-
-
-
 - **Intelligent Ingredient Insights** – Understand the role of each ingredient, discover beneficial components, and identify potential concerns for your skin.
 
 - **Personalized Usage Guidance** – Receive clear explanations, practical usage advice, and routine guidance tailored to your skin's needs.
@@ -39,6 +35,38 @@ Every skin is unique, and every skincare decision matters. Lumina is built to ma
 - **Seamless Label Scanning** – Simply upload a product label image and let Lumina transform complex ingredient lists into clear, personalized insights.
 
 ---
+
+# 🖼️ System Workflow
+
+```text
+                User Opens Lumina
+                       │
+                       ▼
+               Skin Profile Setup
+                       │
+        ┌──────────────┴──────────────┐
+        ▼                             ▼
+ Knows Skin Type             Doesn't Know Skin Type
+        │                             │
+        └──────────────┬──────────────┘
+                       ▼
+      Sensitivity Assessment + Face Analysis
+                       │
+                       ▼
+      Personalized Skin Profile Generated
+                       │
+                       ▼
+        Upload Product Label & Select Category
+                       │
+                       ▼
+      EasyOCR → Knowledge Base → Mistral-7B
+                       │
+                       ▼
+      Personalized Recommendation & Insights
+```
+
+---
+
 
 # 🛠️ Technologies Used
 
